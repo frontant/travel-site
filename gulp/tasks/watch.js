@@ -5,7 +5,7 @@ browserSync = require("browser-sync").create();
 gulp.task("watch", function(){
     browserSync.init({
         notify: false,
-        ghostMode: false,
+//        ghostMode: false,
         localOnly: true,
         open: false,
         online: false,
