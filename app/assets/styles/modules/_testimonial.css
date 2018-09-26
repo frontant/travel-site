@@ -1,0 +1,43 @@
+.testimonial{
+    $icon_height: 160px;
+
+    background-color: rgba(255, 255, 255, .8);
+    padding: 0 18px 1px 18px;
+    margin-bottom: ($icon_height / 2 + 18px);
+
+    @mixin atLarge {
+        padding: 0 1.8125rem 1px 1.8125rem;
+        margin-bottom: 0;
+    }
+
+    &--last{
+        margin-bottom: 0;
+    }
+
+    &__icon{
+        position: relative;
+        display: block;
+        top: ($icon_height / -2);
+        height: $icon_height;
+        width: $icon_height;
+        margin: 0 auto ($icon_height / -2) auto;
+
+        border-radius: ($icon_height / 2);
+        border: 6px solid rgba(255, 255, 255, .8);
+    }
+
+    &__title{
+        font-size: 1.5rem;
+        color: $mainBlue;
+        text-align: center;
+        margin: 0;
+    }
+
+    &__subtitle{
+        font-size: 0.9375rem;
+        color: $mainOrange;
+        text-align: center;
+        font-weight: 400;
+        margin: 0.25rem 0 1rem 0;
+    }
+}

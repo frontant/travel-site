@@ -9,4 +9,11 @@
         background-color: $mainBlue;
         color: #FFF;
     }
+
+    &--testimonials{
+        background-color: #e0e6ef;
+        @mixin atLarge {
+            background: url("/assets/images/testimonials-bg.jpg") top center/cover no-repeat;
+        }
+    }
 }
