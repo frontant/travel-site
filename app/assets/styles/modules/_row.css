@@ -3,61 +3,90 @@
 
     margin-right: 0;
     
-    &--gatters{
+    &--gutters{
         margin-right: -65px;
     }
     
-    &--gatters-large{
+    &--gutters-large{
         margin-right: -100px;
     }
-    
 
-    /* columns formating */
+    &--gutters-small{
+        margin-right: -45px;
+    }
 
-    &--gatters > &__cl{
+    &--t-padding{
+        padding-top: 80px;
+    }
+
+    @mixin atLarge {
+        &--md-equal-height{
+            display: flex;
+        }
+    }
+
+
+    /* column formating */
+
+    &--gutters > &__cl{
         padding-right: 65px;
     }
 
-    &--gatters-large > &__cl{
+    &--gutters-large > &__cl{
         padding-right: 100px;
     }
 
-    &__cl--large{
-        margin-right:
+    &--gutters-small > &__cl{
+        padding-right: 45px;
     }
 
-    &__cl--b-margin{
-        margin-bottom: 1rem;
+    @mixin atLarge {
+        &--md-equal-height > &__cl{
+            display: flex;
+        }
     }
 
-    @mixin atMedium {
-        &__cl--md-no-b-margin {
-            margin-bottom: 0;
+    &__cl{
+        &--b-margin{
+            margin-bottom: 1rem;
         }
 
-        &__cl--md-4 {
-            float: left;
-            width: 33.33%;
+        @mixin atMedium {
+            &--md-no-b-margin {
+                margin-bottom: 0;
+            }
+    
+            &--md-4 {
+                float: left;
+                width: 33.33%;
+            }
+            
+            &--md-4-larger {
+                float: left;
+                width: 37%;
+            }
+            
+            &--md-6 {
+                float: left;
+                width: 50%;
+            }
+            
+            &--md-8 {
+                float: left;
+                width: 66.66%;
+            }
+            
+            &--md-8-smaller {
+                float: left;
+                width: 63%;
+            }
         }
-        
-        &__cl--md-4-larger {
-            float: left;
-            width: 37%;
-        }
-        
-        &__cl--md-6 {
-            float: left;
-            width: 50%;
-        }
-        
-        &__cl--md-8 {
-            float: left;
-            width: 66.66%;
-        }
-        
-        &__cl--md-8-smaller {
-            float: left;
-            width: 63%;
+
+        @mixin atLarge {
+            &--lg-4 {
+                float: left;
+                width: 33.33%;
+            }
         }
     }
 }
