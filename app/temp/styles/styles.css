@@ -1157,3 +1157,21 @@ Instead edit gulp/templates/sprite.css */
             background-color: transparent
     }
     }
+
+@media (min-width:800px) {
+
+.reveal-item{
+        opacity: 0
+}
+    }
+
+.reveal-item--is-visible{
+        opacity: 1;
+    }
+
+@media (min-width:800px) {
+
+.reveal-item--md-transition{
+            transition: all 1.2s ease-out
+    }
+    }
