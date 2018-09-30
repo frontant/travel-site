@@ -496,6 +496,10 @@ button::-moz-focus-inner{
     }
     }
 
+.wrapper--narrow{
+        max-width: 470px;
+    }
+
 .page-section{
     padding: 1.2rem 0;
 }
@@ -708,6 +712,10 @@ button::-moz-focus-inner{
 
 .section-title--blue{
         color: #2f5572;
+    }
+
+.section-title--less-margin{
+        margin-bottom: 1.3rem;
     }
 
 .section-title__icon{
@@ -1219,3 +1227,51 @@ a.primary-nav__item--is-selected{
             transition: all .8s ease-out
     }
     }
+
+.modal{
+    position: fixed;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, .94);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.modal__description{
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 300;
+        line-height: 1.65;
+    }
+
+.social-icons{
+    text-align: center;
+    line-height: 2.5;
+    word-spacing: 0.7rem;
+}
+
+.social-icons__icon{
+        display: inline-block;
+        position: relative;
+        background-color: #d59541;
+        width: 33%;
+        height: 72px;
+    }
+
+@media (min-width:530px) {
+
+.social-icons__icon{
+            width: 72px;
+            height: 72px
+    }
+    }
+
+.social-icons__icon .icon{
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+        }
