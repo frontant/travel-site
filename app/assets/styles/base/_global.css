@@ -14,4 +14,12 @@ img{
 
 a{
     color: $mainOrange;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+button::-moz-focus-inner{
+    border: none;
 }
