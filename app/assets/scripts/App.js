@@ -1,12 +1,15 @@
-import MobileMenu from "./modules/MobileMenu";
-import RevealOnScroll from "./modules/RevealOnScroll";
 import $ from "jquery";
 
-var mobileMenu = new MobileMenu();
+import MobileMenu from "./modules/MobileMenu";
+import RevealOnScroll from "./modules/RevealOnScroll";
+import StickyHeader from "./modules/StickyHeader";
+
+new MobileMenu();
 new RevealOnScroll({
     elems : $(".feature-item"),
     offset : "85%",
-    addClasses : "reveal-item--md-transition"
+    addClasses : "reveal-item--md-transition-fast",
+    transitionDelay : "0.15s"
 });
 new RevealOnScroll({
     elems : $(".testimonial"),
@@ -14,3 +17,4 @@ new RevealOnScroll({
     addClasses : "reveal-item--md-transition",
     transitionDelay : "0.1s"
 });
+new StickyHeader();

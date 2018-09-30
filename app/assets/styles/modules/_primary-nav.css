@@ -51,4 +51,10 @@
             background-color: transparent;
         }
     }
+
+    a&__item{
+        &--is-selected{
+            color: #fabb69;
+        }
+    }
 }

@@ -928,6 +928,7 @@ Instead edit gulp/templates/sprite.css */
 @media (min-width:800px) {
 
 .site-header{
+        position: fixed;
         background-color: rgba(47,85,114, .3)
 }
     }
@@ -938,8 +939,26 @@ Instead edit gulp/templates/sprite.css */
 
 @media (min-width:800px) {
 
+.site-header--md-dark{
+            background-color: rgba(23, 51, 72, .85)
+    }
+    }
+
+@media (min-width:800px) {
+
 .site-header__btn-container{
             float: right
+    }
+    }
+
+/* Logo */
+
+@media (min-width:800px) {
+
+.site-header--md-dark .site-header__logo{
+            -webkit-transform: scale(.57);
+                    transform: scale(.57);
+            background-color: transparent
     }
     }
 
@@ -953,6 +972,12 @@ Instead edit gulp/templates/sprite.css */
                 transform-origin: 50% 0;
         background-color: #2f5572;
         padding: 25px 36px;
+
+        transition: background-color .3s ease-out, -webkit-transform .3s ease-out;
+
+        transition: transform .3s ease-out, background-color .3s ease-out;
+
+        transition: transform .3s ease-out, background-color .3s ease-out, -webkit-transform .3s ease-out;
     }
 
 @media (min-width:800px) {
@@ -1158,6 +1183,10 @@ Instead edit gulp/templates/sprite.css */
     }
     }
 
+a.primary-nav__item--is-selected{
+            color: #fabb69;
+        }
+
 @media (min-width:800px) {
 
 .reveal-item{
@@ -1173,5 +1202,12 @@ Instead edit gulp/templates/sprite.css */
 
 .reveal-item--md-transition{
             transition: all 1.2s ease-out
+    }
+    }
+
+@media (min-width:800px) {
+
+.reveal-item--md-transition-fast{
+            transition: all .8s ease-out
     }
     }
