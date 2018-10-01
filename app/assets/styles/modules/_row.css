@@ -20,7 +20,7 @@
     }
 
     @mixin atLarge {
-        &--md-equal-height{
+        .flexbox &--md-equal-height{
             display: flex;
         }
     }
@@ -41,7 +41,7 @@
     }
 
     @mixin atLarge {
-        &--md-equal-height > &__cl{
+        .flexbox &--md-equal-height > &__cl{
             display: flex;
         }
     }

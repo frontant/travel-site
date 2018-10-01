@@ -6,6 +6,9 @@ Instead edit gulp/templates/sprite.css */
     .icon{
         background: url('/assets/images/sprites/{{{sprite}}}')
     }
+    .no-svg .icon{
+        background: url('/assets/images/sprites/{{#replaceSvgWithPng}}{{{sprite}}}{{/replaceSvgWithPng}}')
+    }
     {{/first}}
     .icon--{{base}} {
         width: {{width.outer}}px;
