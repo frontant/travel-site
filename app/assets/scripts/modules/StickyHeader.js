@@ -1,6 +1,6 @@
 import $ from "jquery";
-import waypoints from "waypoints/lib/noframework.waypoints";
-import smoothScroll from "jquery-smooth-scroll";
+import "waypoints/lib/noframework.waypoints";
+import "jquery-smooth-scroll";
 
 class StickyHeader{
     constructor(){
