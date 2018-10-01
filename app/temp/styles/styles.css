@@ -43,7 +43,8 @@ h1 {
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
@@ -231,7 +232,8 @@ fieldset {
  */
 
 legend {
-  box-sizing: border-box; /* 1 */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
   color: inherit; /* 2 */
   display: table; /* 1 */
   max-width: 100%; /* 1 */
@@ -262,7 +264,8 @@ textarea {
 
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box; /* 1 */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
 
@@ -352,7 +355,8 @@ img{
 }
 
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 a{
@@ -376,6 +380,7 @@ button::-moz-focus-inner{
         position: absolute;
         top: 50%;
         -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
                 transform: translateY(-50%);
         padding-top: 88px;
         left: 0;
@@ -609,6 +614,9 @@ button::-moz-focus-inner{
 
 @media (min-width:1010px) {
         .flexbox .row--md-equal-height{
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
         }
     }
@@ -629,6 +637,9 @@ button::-moz-focus-inner{
 
 @media (min-width:1010px) {
         .flexbox .row--md-equal-height > .row__cl{
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
         }
     }
@@ -805,7 +816,9 @@ button::-moz-focus-inner{
         width: 160px;
         margin: 0 auto -80px auto;
 
-        border-radius: 80px;
+        -webkit-border-radius: 80px;
+
+                border-radius: 80px;
         border: 6px solid rgba(255, 255, 255, .8);
     }
 
@@ -936,6 +949,10 @@ Instead edit gulp/templates/sprite.css */
     z-index: 2;
     padding: 10px 0;
 
+    -webkit-transition: background-color .3s ease-out;
+
+    -o-transition: background-color .3s ease-out;
+
     transition: background-color .3s ease-out;
 }
 
@@ -977,6 +994,7 @@ Instead edit gulp/templates/sprite.css */
 
 .site-header--md-dark .site-header__logo{
             -webkit-transform: scale(.57);
+                -ms-transform: scale(.57);
                     transform: scale(.57);
             background-color: transparent
     }
@@ -987,13 +1005,19 @@ Instead edit gulp/templates/sprite.css */
         top: 0;
         left: 50%;
         -webkit-transform: translateX(-50%) scale(.8);
+            -ms-transform: translateX(-50%) scale(.8);
                 transform: translateX(-50%) scale(.8);
         -webkit-transform-origin: 50% 0;
+            -ms-transform-origin: 50% 0;
                 transform-origin: 50% 0;
         background-color: #2f5572;
         padding: 25px 36px;
 
+        -webkit-transition: background-color .3s ease-out, -webkit-transform .3s ease-out;
+
         transition: background-color .3s ease-out, -webkit-transform .3s ease-out;
+
+        -o-transition: transform .3s ease-out, background-color .3s ease-out;
 
         transition: transform .3s ease-out, background-color .3s ease-out;
 
@@ -1005,6 +1029,7 @@ Instead edit gulp/templates/sprite.css */
 .site-header__logo{
             left: auto;
             -webkit-transform: translateX(0);
+                -ms-transform: translateX(0);
                     transform: translateX(0)
     }
     }
@@ -1038,9 +1063,14 @@ Instead edit gulp/templates/sprite.css */
             height: 3px;
             background-color: white;
             -webkit-transform-origin: 0 0;
+                -ms-transform-origin: 0 0;
                     transform-origin: 0 0;
 
+            -webkit-transition: -webkit-transform .3s ease-out;
+
             transition: -webkit-transform .3s ease-out;
+
+            -o-transition: transform .3s ease-out;
 
             transition: transform .3s ease-out;
 
@@ -1049,6 +1079,7 @@ Instead edit gulp/templates/sprite.css */
 
 .site-header__menu-icon--close-x::before{
             -webkit-transform: rotateZ(45deg) scaleX(1.2) translate(1.5px, -1.5px);
+                -ms-transform: rotate(45deg) scaleX(1.2) translate(1.5px, -1.5px);
                     transform: rotateZ(45deg) scaleX(1.2) translate(1.5px, -1.5px);
         }
 
@@ -1061,7 +1092,12 @@ Instead edit gulp/templates/sprite.css */
             height: 3px;
             background-color: white;
             -webkit-transform-origin: 0 50%;
+                -ms-transform-origin: 0 50%;
                     transform-origin: 0 50%;
+
+            -webkit-transition: all .3s ease-out;
+
+            -o-transition: all .3s ease-out;
 
             transition: all .3s ease-out;
         }
@@ -1069,6 +1105,7 @@ Instead edit gulp/templates/sprite.css */
 .site-header__menu-icon--close-x > .site-header__menu-icon__middle{
             opacity: 0;
             -webkit-transform: scaleX(0);
+                -ms-transform: scaleX(0);
                     transform: scaleX(0);
         }
 
@@ -1081,9 +1118,14 @@ Instead edit gulp/templates/sprite.css */
             height: 3px;
             background-color: white;
             -webkit-transform-origin: 0 100%;
+                -ms-transform-origin: 0 100%;
                     transform-origin: 0 100%;
 
+            -webkit-transition: -webkit-transform .3s ease-out;
+
             transition: -webkit-transform .3s ease-out;
+
+            -o-transition: transform .3s ease-out;
 
             transition: transform .3s ease-out;
 
@@ -1092,6 +1134,7 @@ Instead edit gulp/templates/sprite.css */
 
 .site-header__menu-icon--close-x::after{
             -webkit-transform: rotateZ(-45deg) scaleX(1.2) translate(1.5px, 1.5px);
+                -ms-transform: rotate(-45deg) scaleX(1.2) translate(1.5px, 1.5px);
                     transform: rotateZ(-45deg) scaleX(1.2) translate(1.5px, 1.5px);
         }
 
@@ -1104,7 +1147,11 @@ Instead edit gulp/templates/sprite.css */
 
         -webkit-transform: scale(1.2);
 
+            -ms-transform: scale(1.2);
+
                 transform: scale(1.2);
+        -webkit-transition: all .3s ease-out;
+        -o-transition: all .3s ease-out;
         transition: all .3s ease-out;
     }
 
@@ -1117,6 +1164,8 @@ Instead edit gulp/templates/sprite.css */
 
             -webkit-transform: scale(1);
 
+                -ms-transform: scale(1);
+
                     transform: scale(1)
     }
     }
@@ -1126,6 +1175,8 @@ Instead edit gulp/templates/sprite.css */
             z-index: 1;
             
             -webkit-transform: scale(1);
+            
+                -ms-transform: scale(1);
             
                     transform: scale(1);
         }
@@ -1221,6 +1272,8 @@ a.primary-nav__item--is-selected{
 @media (min-width:800px) {
 
 .reveal-item--md-transition{
+            -webkit-transition: all 1.2s ease-out;
+            -o-transition: all 1.2s ease-out;
             transition: all 1.2s ease-out
     }
     }
@@ -1228,6 +1281,8 @@ a.primary-nav__item--is-selected{
 @media (min-width:800px) {
 
 .reveal-item--md-transition-fast{
+            -webkit-transition: all .8s ease-out;
+            -o-transition: all .8s ease-out;
             transition: all .8s ease-out
     }
     }
@@ -1243,7 +1298,12 @@ a.primary-nav__item--is-selected{
     left: 0;
     right: 0;
     -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
             transform: scale(1.2);
+
+    -webkit-transition: all .3s ease-out;
+
+    -o-transition: all .3s ease-out;
 
     transition: all .3s ease-out;
 }
@@ -1252,6 +1312,7 @@ a.primary-nav__item--is-selected{
         visibility: visible;
         opacity: 1;
         -webkit-transform: scale(1);
+            -ms-transform: scale(1);
                 transform: scale(1);
     }
 
@@ -1268,8 +1329,10 @@ a.primary-nav__item--is-selected{
         right: 15px;
         font-size: 2rem;
         -webkit-transform: scaleX(1.2);
+            -ms-transform: scaleX(1.2);
                 transform: scaleX(1.2);
         -webkit-transform-origin: 100% 0;
+            -ms-transform-origin: 100% 0;
                 transform-origin: 100% 0;
         color: #2f5572;
         cursor: pointer;
@@ -1284,6 +1347,7 @@ a.primary-nav__item--is-selected{
         width: 100%;
         top: 50%;
         -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
                 transform: translateY(-50%);
     }
 
@@ -1315,5 +1379,6 @@ a.primary-nav__item--is-selected{
             top: 50%;
             left: 50%;
             -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
                     transform: translate(-50%, -50%);
         }

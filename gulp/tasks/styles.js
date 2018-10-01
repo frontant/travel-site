@@ -15,7 +15,9 @@ gulp.task("styles", function(){
         cssvars,
         nested,
         hexrgba,
-        autoprefixer
+        autoprefixer({
+            browsers :  ['last 15 versions']
+        })
     ]))
     .on("error", function(errorInfo){
         console.log(errorInfo.toString());
