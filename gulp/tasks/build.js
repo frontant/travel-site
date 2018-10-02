@@ -18,13 +18,13 @@ gulp.task("previewDist", function(){
         xip: false,
         tunnel: null,
         server:{
-            baseDir: "doc"
+            baseDir: "docs"
         }
     });
 });
 
 gulp.task("deleteDistFolder", function(){
-    return del("./doc");
+    return del("./docs");
 });
 
 gulp.task("copyGeneralFiles", function(){
@@ -42,7 +42,7 @@ gulp.task("copyGeneralFiles", function(){
     ];
 
     return gulp.src(pathsToCopy)
-    .pipe(gulp.dest("./doc"))
+    .pipe(gulp.dest("./docs"))
 });
 
 gulp.task("optimiseImages", function(){
@@ -57,7 +57,7 @@ gulp.task("optimiseImages", function(){
         interlaced: true,
         multipass: true
     }))
-    .pipe(gulp.dest("./doc/assets/images"))
+    .pipe(gulp.dest("./docs/assets/images"))
 });
 
 gulp.task("copyOptimisedStylesAndScripts", ["styles", "scripts"], function(){
@@ -72,7 +72,7 @@ gulp.task("copyOptimisedStylesAndScripts", ["styles", "scripts"], function(){
             uglify
         ]
     }))
-    .pipe(gulp.dest("./doc"));
+    .pipe(gulp.dest("./docs"));
 });
 
 gulp.task("build", gulpSequence(
