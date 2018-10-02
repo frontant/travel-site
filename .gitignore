@@ -11,7 +11,6 @@
 *.sass-cache
 node_modules/
 app/temp/
-app/assets/images/sprites/
 dist/
 
 # OS or Editor folders
