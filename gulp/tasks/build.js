@@ -5,7 +5,8 @@ usemin = require("gulp-usemin"),
 rev = require("gulp-rev"),
 cssnano = require("gulp-cssnano"),
 uglify = require("gulp-uglify"),
-browserSync = require("browser-sync").create();
+browserSync = require("browser-sync").create(),
+gulpSequence = require("gulp-sequence");
 
 gulp.task("previewDist", function(){
     browserSync.init({
@@ -17,16 +18,16 @@ gulp.task("previewDist", function(){
         xip: false,
         tunnel: null,
         server:{
-            baseDir: "dist"
+            baseDir: "doc"
         }
     });
 });
 
 gulp.task("deleteDistFolder", function(){
-    return del("./dist");
+    return del("./doc");
 });
 
-gulp.task("copyGeneralFiles", ["deleteDistFolder"], function(){
+gulp.task("copyGeneralFiles", function(){
     var pathsToCopy = [
         "./app/**/*",
         "!./app/index.html",
@@ -41,10 +42,10 @@ gulp.task("copyGeneralFiles", ["deleteDistFolder"], function(){
     ];
 
     return gulp.src(pathsToCopy)
-    .pipe(gulp.dest("./dist"))
+    .pipe(gulp.dest("./doc"))
 });
 
-gulp.task("optimiseImages", ["deleteDistFolder", "icons"], function(){
+gulp.task("optimiseImages", function(){
     return gulp.src([
         "./app/assets/images/**/*",
         "!./app/assets/images/**/icons",
@@ -56,10 +57,10 @@ gulp.task("optimiseImages", ["deleteDistFolder", "icons"], function(){
         interlaced: true,
         multipass: true
     }))
-    .pipe(gulp.dest("./dist/assets/images"))
+    .pipe(gulp.dest("./doc/assets/images"))
 });
 
-gulp.task("usemin", ["deleteDistFolder", "styles", "scripts"], function(){
+gulp.task("copyOptimisedStylesAndScripts", ["styles", "scripts"], function(){
     return gulp.src("./app/index.html")
     .pipe(usemin({
         css: [
@@ -71,11 +72,11 @@ gulp.task("usemin", ["deleteDistFolder", "styles", "scripts"], function(){
             uglify
         ]
     }))
-    .pipe(gulp.dest("./dist"));
+    .pipe(gulp.dest("./doc"));
 });
 
-gulp.task("build", [
+gulp.task("build", gulpSequence(
     "deleteDistFolder",
-    "copyGeneralFiles",
-    "optimiseImages",
-    "usemin"]);
+    ["icons", "modernizr", "copyGeneralFiles"],
+    ["optimiseImages", "copyOptimisedStylesAndScripts"]
+));
