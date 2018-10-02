@@ -22,7 +22,7 @@ class StickyHeader{
         var that = this;
         new Waypoint({
             group: "header",
-            element: that.headerTriggerElement[0],
+            element: that.headerTriggerElement.get(0),
             handler: function (direction) {
                 if(direction == "down"){
                     that.siteHeader.addClass("site-header--md-dark")
